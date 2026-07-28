@@ -1,0 +1,27 @@
+﻿# ===== 后台配置 =====
+backend:
+  name: github
+  repo: totoro-hust/myblog     # ← 必改！例如 zhangsan/myblog
+  branch: main                    # ← 核对：你的默认分支是 main 还是 master？
+  # 注意：这里故意不写 auth_type / app_id
+  # 这样登录页会出现一个“粘贴 Personal Access Token”的输入框，最稳
+
+# 图片上传存放位置（和你已有的 images/uploads 对应）
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+# ===== 内容集合：文章 =====
+collections:
+  - name: "posts"
+    label: "文章"
+    folder: "posts"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "yaml-frontmatter"
+    fields:
+      - { label: "标题", name: "title", widget: "string" }
+      - { label: "发布日期", name: "date", widget: "datetime" }
+      - { label: "封面图", name: "cover", widget: "image", required: false }
+      - { label: "摘要", name: "summary", widget: "text", required: false }
+      - { label: "正文", name: "body", widget: "markdown" }
