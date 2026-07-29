@@ -4,15 +4,14 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Content Manager</title>
-  <!-- 引入 Decap CMS 核心脚本 -->
-  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
-  
-  <!-- 
-    注意：这里故意没有引入 netlify-identity-widget 
-    这就是解决 404 的关键！强制 CMS 只读取 config.yml 的配置 
-  -->
+  <!-- 引入 Decap CMS 的核心样式 -->
+  <link rel="stylesheet" href="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.css" />
 </head>
 <body>
-  <!-- CMS 界面将挂载在这里 -->
+  <!-- 这是 CMS 的挂载点，必须有 -->
+  <div id="nc-root"></div>
+  
+  <!-- 这是 CMS 的核心引擎，刚才白屏就是因为缺了这个 -->
+  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
 </body>
 </html>
