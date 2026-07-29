@@ -1,35 +1,34 @@
-﻿# ===== 后台配置 =====
+# ================= 后台登录：GitHub OAuth =================
 backend:
-  #name: git-gateway
-  #repo: totoro-hust/myblog 
-  #branch: main                # 你的主分支名字，通常是 main 或 master
-  #identity_url: https://myblog.netlify.app/.netlify/identity
-  #gateway_url: https://myblog.netlify.app/.netlify/git  
- 
   name: github
-  repo: totoro-hust/myblog     # ← 必改！例如 zhangsan/myblog
+  repo: totoro-hust/myblog          # 你的仓库全名
   branch: main
-  auth_type: implicit
-  app_id: Ov23liye660qp1bVJKjp
-  # 注意：这里故意不写 auth_type / app_id
-  # 这样登录页会出现一个“粘贴 Personal Access Token”的输入框，最稳
+  auth_type: implicit               # 关键：走 GitHub 授权，不再经过 Netlify
+  app_id: Ov23liye660qp1bVJKjp      # ⚠️ OAuth App 的 Client ID（Ov23li 或 Iv1. 开头）
 
-# 图片上传存放位置（和你已有的 images/uploads 对应）
-media_folder: "images/uploads"
+# ================= 站点信息 =================
+site_url: https://blog.luckdove.com
+display_url: https://blog.luckdove.com
+locale: zh_Hans                     # 后台界面中文
+
+# ================= 图片存储 =================
+media_folder: "/images/uploads"    # ⚠️ 见下方对照表
 public_folder: "/images/uploads"
 
-# ===== 内容集合：文章 =====
+# ================= 文章管理 =================
 collections:
   - name: "posts"
     label: "文章"
-    folder: "posts"
+    folder: "content/posts"              # ⚠️ 见下方对照表
     create: true
-    slug: "{{slug}}"
-    extension: "md"
-    format: "yaml-frontmatter"
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    editor:
+      preview: false
     fields:
       - { label: "标题", name: "title", widget: "string" }
-      - { label: "发布日期", name: "date", widget: "datetime" }
+      - { label: "发布日期", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false }
+      - { label: "标签", name: "tags", widget: "list", required: false }
+      - { label: "分类", name: "categories", widget: "list", required: false }
       - { label: "封面图", name: "cover", widget: "image", required: false }
       - { label: "摘要", name: "summary", widget: "text", required: false }
       - { label: "正文", name: "body", widget: "markdown" }
