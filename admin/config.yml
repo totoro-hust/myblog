@@ -1,7 +1,8 @@
 ﻿# ===== 后台配置 =====
 backend:
-  name: git-gateway
-  branch: main
+  name: github
+  repo: totoro-hust/myblog # 例如：luckdove/blog
+  branch: main                # 你的主分支名字，通常是 main 或 master
   identity_url: https://myblog.netlify.app/.netlify/identity
   gateway_url: https://myblog.netlify.app/.netlify/git  
  
