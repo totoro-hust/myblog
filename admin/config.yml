@@ -1,16 +1,16 @@
 ﻿# ===== 后台配置 =====
 backend:
   name: github
-  repo: totoro-hust/myblog 
+  #repo: totoro-hust/myblog 
   branch: main                # 你的主分支名字，通常是 main 或 master
-  #identity_url: https://myblog.netlify.app/.netlify/identity
-  #gateway_url: https://myblog.netlify.app/.netlify/git  
+  identity_url: https://myblog.netlify.app/.netlify/identity
+  gateway_url: https://myblog.netlify.app/.netlify/git  
  
   #name: github
   #repo: totoro-hust/myblog     # ← 必改！例如 zhangsan/myblog
   #branch: main
-  auth_type: implicit
-  app_id: Ov23liye660qp1bVJKjp
+  #auth_type: implicit
+  #app_id: Ov23liye660qp1bVJKjp
   # 注意：这里故意不写 auth_type / app_id
   # 这样登录页会出现一个“粘贴 Personal Access Token”的输入框，最稳
 
