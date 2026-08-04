@@ -3,7 +3,7 @@ backend:
   name: github
   repo: totoro-hust/myblog          # 你的仓库全名
   branch: main
-  auth_type: implicit               # 关键：走 GitHub 授权，不再经过 Netlify
+  auth_type: pkce               # 关键：走 GitHub 授权，不再经过 Netlify
   app_id: Ov23liye660qp1bVJKjp      # ⚠️ OAuth App 的 Client ID（Ov23li 或 Iv1. 开头）
 
 # ================= 站点信息 =================
