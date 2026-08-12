@@ -1,14 +1,49 @@
+
 <!doctype html>
 <html lang="zh-CN">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="robots" content="noindex" />
   <title>内容管理</title>
 </head>
 <body>
-  <!-- 国内访问慢就换成 jsdelivr：
-       https://cdn.jsdelivr.net/npm/decap-cms@3/dist/decap-cms.js -->
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+  <script>
+    CMS.init({
+      config: {
+        backend: {
+          name: "github",
+          repo: "totoro-hust/myblog",
+          branch: "main",
+          auth_type: "pkce",
+          app_id: "Ov23liye66Qap1bVJKjp"
+        },
+        site_url: "https://cms.luckdove.com",
+        display_url: "https://cms.luckdove.com",
+        locale: "zh_Hans",
+        media_folder: "/images/uploads",
+        public_folder: "/images/uploads",
+        collections: [
+          {
+            name: "posts",
+            label: "文章",
+            folder: "posts",
+            create: true,
+            slug: "{{year}}-{{month}}-{{day}}-{{slug}}",
+            editor: { preview: false },
+            fields: [
+              { label: "标题", name: "title", widget: "string" },
+              { label: "发布日期", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false },
+              { label: "标签", name: "tags", widget: "list", required: false },
+              { label: "分类", name: "categories", widget: "list", required: false },
+              { label: "封面图", name: "cover", widget: "image", required: false },
+              { label: "摘要", name: "summary", widget: "text", required: false },
+              { label: "正文", name: "body", widget: "markdown" }
+            ]
+          }
+        ]
+      }
+    });
+  </script>
 </body>
 </html>
