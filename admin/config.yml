@@ -1,35 +1,35 @@
 # ================= 后台登录：GitHub OAuth =================
-backend:
-  name: github
-  repo: totoro-hust/myblog          # 你的仓库全名
-  branch: main
-  auth_type: pkce               # 关键：走 GitHub 授权，不再经过 Netlify
-  app_id: Ov23liye660qp1bVJKjp      # ⚠️ OAuth App 的 Client ID（Ov23li 或 Iv1. 开头）
+#backend:
+#  name: github
+#  repo: totoro-hust/myblog          # 你的仓库全名
+#  branch: main
+#  auth_type: pkce               # 关键：走 GitHub 授权，不再经过 Netlify
+#  app_id: Ov23liye660qp1bVJKjp      # ⚠️ OAuth App 的 Client ID（Ov23li 或 Iv1. 开头）
   #base_url: https://myblog-7cao0jsi7-totoro-dove.vercel.app
 
 # ================= 站点信息 =================
-site_url: https://blog.luckdove.com
-display_url: https://blog.luckdove.com
-locale: zh_Hans                     # 后台界面中文
+#site_url: https://blog.luckdove.com
+#display_url: https://blog.luckdove.com
+#locale: zh_Hans                     # 后台界面中文
 
 # ================= 图片存储 =================
-media_folder: "/images/uploads"    # ⚠️ 见下方对照表
-public_folder: "/images/uploads"
+#media_folder: "/images/uploads"    # ⚠️ 见下方对照表
+#public_folder: "/images/uploads"
 
 # ================= 文章管理 =================
-collections:
-  - name: "posts"
-    label: "文章"
-    folder: "posts"              # ⚠️ 见下方对照表
-    create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    editor:
-      preview: false
-    fields:
-      - { label: "标题", name: "title", widget: "string" }
-      - { label: "发布日期", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false }
-      - { label: "标签", name: "tags", widget: "list", required: false }
-      - { label: "分类", name: "categories", widget: "list", required: false }
-      - { label: "封面图", name: "cover", widget: "image", required: false }
-      - { label: "摘要", name: "summary", widget: "text", required: false }
-      - { label: "正文", name: "body", widget: "markdown" }
+collections: []
+#  - name: "posts"
+#    label: "文章"
+#    folder: "posts"              # ⚠️ 见下方对照表
+#    create: true
+#    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+#    editor:
+#      preview: false
+#    fields:
+#      - { label: "标题", name: "title", widget: "string" }
+#      - { label: "发布日期", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false }
+#      - { label: "标签", name: "tags", widget: "list", required: false }
+#      - { label: "分类", name: "categories", widget: "list", required: false }
+#      - { label: "封面图", name: "cover", widget: "image", required: false }
+#      - { label: "摘要", name: "summary", widget: "text", required: false }
+#      - { label: "正文", name: "body", widget: "markdown" }
