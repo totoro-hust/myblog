@@ -5,7 +5,7 @@ backend:
   branch: main
   auth_type: pkce               # 关键：走 GitHub 授权，不再经过 Netlify
   app_id: Ov23liye660qp1bVJKjp      # ⚠️ OAuth App 的 Client ID（Ov23li 或 Iv1. 开头）
-  base_url: https://myblog-7cao0jsi7-totoro-dove.vercel.app
+  #base_url: https://myblog-7cao0jsi7-totoro-dove.vercel.app
 
 # ================= 站点信息 =================
 site_url: https://blog.luckdove.com
