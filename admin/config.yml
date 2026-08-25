@@ -2,9 +2,9 @@ backend:
   name: github
   repo: totoro-hust/myblog
   branch: main
-  base_url: https://api.decapcms.org
-  auth_endpoint: auth
-  auth_type: pkce
+  base_url: https://blog.luckdove.com
+  auth_endpoint: api/auth
+  #auth_type: pkce
   #auth_endpoint: https://blog.luckdove.com/api/auth
   #auth_type: pkce
   #app_id: Ov23liye66Qap1bVJKjp
