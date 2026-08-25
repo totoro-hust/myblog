@@ -2,8 +2,9 @@ backend:
   name: github
   repo: totoro-hust/myblog
   branch: main
-  auth_type: pkce
-  app_id: Ov23liye66Qap1bVJKjp
+  auth_endpoint: https://blog.luckdove.com/api/auth
+  #auth_type: pkce
+  #app_id: Ov23liye66Qap1bVJKjp
 
 site_url: https://blog.luckdove.com
 display_url: https://blog.luckdove.com
