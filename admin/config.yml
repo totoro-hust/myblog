@@ -4,7 +4,6 @@ backend:
   branch: main
   base_url: https://blog.luckdove.com
   auth_endpoint: api/auth
-  auth_type: implicit  # ← 这一行是关键！
   #auth_type: pkce
   #auth_endpoint: https://blog.luckdove.com/api/auth
   #auth_type: pkce
