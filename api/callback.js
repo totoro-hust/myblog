@@ -1,8 +1,16 @@
-import jwt from 'jsonwebtoken';
+//import jwt from 'jsonwebtoken';
+import crypto from 'crypto';
 
 const GITHUB_CLIENT_ID = process.env.GITHUB_CLIENT_ID;
 const GITHUB_CLIENT_SECRET = process.env.GITHUB_CLIENT_SECRET;
 const JWT_SECRET = process.env.JWT_SECRET || 'netlify-cms-default-secret'; // ⚠️ 生产环境务必设置强密钥
+
+// 纯 Node.js 实现 JWT 签发（无需 jsonwebtoken 库）
+function signJWT(payload, secret, expiresInSec = 604800) {
+  const header = Buffer.from(JSON.stringify({ alg: 'HS256', typ: 'JWT' })).toString('base64url');
+  const body = Buffer.from(JSON.stringify({
+    ...payload,
+    iat: Math.floor(Date.now
 
 // ✅ 带重试 + 超时的安全 fetch
 async function exchangeCodeForToken(code) {
